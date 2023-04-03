@@ -27,7 +27,6 @@
 }
 .left {
   background-color: #2196F3;
-  padding: 20px;
   float: left;
   width: 33.33%; /* The width is 20%, by default */
   border: black solid 2px;
@@ -35,7 +34,6 @@
 
 .main {
   background-color: #f1f1f1;
-  padding: 20px;
   float: left;
   border: black solid 2px;
   width: 33.33%; /* The width is 60%, by default */
@@ -43,7 +41,6 @@
 
 .right {
   background-color: #04AA6D;
-  padding: 20px;
   float: left;
   border: black solid 2px;
   width: 33.33%; /* The width is 20%, by default */
@@ -58,11 +55,42 @@
 }
 
 
+.button1, .button2 .button3{
+    margin: auto;
+    display: flex;
+}
+
+
+#demo{
+
+    font-size: 25px;
+    padding-left: 90px;
+    font-weight: bold;
+    margin: auto;
+    float: left;
+    width: 100%;
+    background-color: green;
+    
+}
+
+#demobtn {  
+
+    visibility: hidden;
+    margin-left: 300px;
+  
+
+
+}
+
+
+
+
 @media screen and (max-width: 800px) {
   .left, .main, .right {
     width: 100%;
   }
 }
+
 </style>
 
 
@@ -77,16 +105,88 @@
 
 <div class="left">
     <div class ="movie-title1">horror</div>
+    <button class ="button1"  onclick="myHorror()">click me</button>
   </div>
   
   <div class="main">
     <div class ="movie-title2">funny</div>
+    <button class ="button1">click me</button>
   </div>
   
   <div class="right">
     <div class ="movie-title3">romantic</div>
+    <button class ="button1">click me</button>
   </div>
 
-    
+
+
+
+  <p id="demo"></p>
+ 
+  <button id="demobtn" onclick="myDel()"></button>
+
+
+<div id ="container">
+
+    <div id ="movieTitle"></div>
+
+
+    <div id ="moiveDesc"></div>
+
+    <div id ="moiveRating"></div>
+
+
+
+</div>
+
+
+
+
 </body>
 </html>
+
+<script>
+
+
+
+function myHorror() {
+  
+  //This is the title when you click the button under horror.
+  
+  document.getElementById("demo").innerHTML = "Horror movies ive watched";
+
+  //This will create the x button when you clikc the button under horror. 
+
+  document.getElementById("demobtn").innerHTML ="X";
+  demobtn.style.visibility = 'visible';
+  
+
+
+
+
+    
+document.getElementById("movieTitle").innerHTML = "Horror movies ive watched";
+
+document.getElementById("moiveDesc").innerHTML = "Horror movies ive watched";
+
+document.getElementById("moiveRating").innerHTML = "Horror movies ive watched";
+
+
+
+
+}
+
+
+//This is the onlick button of demobtn that will del the title text
+
+function myDel() {
+
+  const element = document.getElementById("demo");
+  element.remove();
+}
+
+
+
+
+
+</script>
