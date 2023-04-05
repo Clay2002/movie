@@ -57,18 +57,9 @@
     display: flex;
 }
 
-#demo{
 
-    font-size: 25px;
-    padding-left: 90px;
-    font-weight: bold;
-    margin: auto;
-    float: left;
-    width: 100%;
-  
-}
 
-#demobtn {  
+#demobtn, #demobtn2, #demobtn3 {  
 
     visibility: hidden;
     position:absolute;
@@ -78,7 +69,7 @@
 
 }
 
-#movieTitle, #movieTitle2, #movieTitle3, #movieTitle4,#movieTitle5,#movieTitle6{
+#movieTitle, #movieTitle2, #movieTitle3, #movieTitle4,#movieTitle5,#movieTitle6, #movieTitle7, #movieTitle8, #movieTitle9{
 
     font-size: 30px;
     font-weight: bold;
@@ -86,19 +77,21 @@
     
 }
 
-#movieRating, #movieRating2, #movieRating3, #movieRating4, #movieRating5, #movieRating6{
+#movieRating, #movieRating2, #movieRating3, #movieRating4, #movieRating5, #movieRating6, #movieRating7, #movieRating8, #movieRating9{
     font-weight: bold;
     font-size: 20px;
+    text-indent: 12px;
 
 }
 
-#moiveDesc{
 
 
-width: 100%;
 
+#demobtn, #demobtn2, #demobtn3{
+
+    margin-left: -400px;
+    margin-top: 78px;
 }
-
 
 #container1{
 
@@ -152,12 +145,51 @@ border:black 3px solid ;
 }
 
 
+#container7{
+
+float: left;
+width: 33.33%;
+border:black 3px solid ;
+
+}
+
+
+#container8{
+
+float: left;
+width: 33.33%;
+border:black 3px solid ;
+
+}
+
+
+#container9{
+
+float: left;
+width: 33.33%;
+border:black 3px solid ;
+
+}
+
+
+
+
+
+
 
 @media screen and (max-width: 800px) {
   .left, .main, .right  {
     width: 100%;
   }
 }
+
+
+@media screen and (max-width: 800px) {
+    #container7, #container8, #container9  {
+    width: 100%;
+  }
+}
+
 
 
 @media screen and (max-width: 800px) {
@@ -186,25 +218,38 @@ border:black 3px solid ;
     
 
 <div class="left">
-    <div class ="movie-title1">horror</div>
+    <div class ="movie-title1">Horror</div>
     <button class ="button1"  onclick="myHorror()">click me</button>
   </div>
   
   <div class="main">
-    <div class ="movie-title2">funny</div>
+    <div class ="movie-title2">Funny</div>
     <button class ="button2" onclick="myFunny()">click me</button>
   </div>
   
   <div class="right">
-    <div class ="movie-title3">romantic</div>
-    <button class ="button3">click me</button>
+    <div class ="movie-title3">Romantic</div>
+    <button class ="button3" onclick="myRomantic()">click me</button>
   </div>
+
+
+
+<div id= "horrorMoivesContainer">
+
+
+    <button id="demobtn" onclick="myDel()"></button>
+
+<div id ="horrorMovies"></div>
+
+
+
+
 
 
 
 <div id ="container1">
 
-    <button id="demobtn" onclick="myDel()"></button>
+    
     <div id="demo"></div>
 
     <div id ="movieTitle"></div>
@@ -253,7 +298,22 @@ border:black 3px solid ;
 
 </div>
 
+
+</div>
+
+<div id= "funnyMoivesContainer">
+
+
+    <button id="demobtn2" onclick="myDel2()"></button>
+
+<div id ="funnyMovies"></div>
+
+</div>
+
+
 <div id ="container4">
+
+
 
     <div id ="movieTitle4"></div>
 
@@ -292,13 +352,89 @@ border:black 3px solid ;
 </div>
 
 
+
+</div>
+
+<div id= "romanticMoivesContainer">
+
+
+    <button id="demobtn3" onclick="myDel3()"></button>
+
+<div id ="romanticMovies"></div>
+
+</div>
+
+
+
+
+
+
+
+<div id ="container7">
+   
+    <button id="demobtn3" onclick="myDel3()"></button>
+
+    <div id ="movieTitle7"></div>
+
+    <div id ="moviePic7"></div>
+
+    <div id ="moiveDesc7"></div>
+
+    <div id ="movieRating7"></div>
+
+
+</div>
+
+<div id ="container8">
+
+    <div id ="movieTitle8"></div>
+
+    <div id ="moviePic8"></div>
+
+    <div id ="moiveDesc8"></div>
+
+    <div id ="movieRating8"></div>
+
+
+</div>
+
+<div id ="container9">
+
+    <div id ="movieTitle9"></div>
+
+    <div id ="moviePic9"></div>
+
+    <div id ="moiveDesc9"></div>
+
+    <div id ="movieRating9"></div>
+
+
+</div>
+
+
 </body>
 </html>
 
 <script>
 
 
+
+
+
+
 function myHorror() {
+
+
+    document.getElementById("horrorMovies").innerHTML ="Horror Movies I've Watched! ";
+    
+    
+
+    const horrorMovies = document.getElementById("horrorMovies");
+    horrorMovies.style.fontSize="30px";
+    horrorMovies.style.textAlign="center";
+
+
+
   
   //This is the title when you click the button under horror.
   
@@ -310,18 +446,22 @@ function myHorror() {
   demobtn.style.visibility = 'visible';
   
 
-    
 document.getElementById("movieTitle").innerHTML = "Lights Out";
 
 document.getElementById("moiveDesc").innerHTML = "When Rebecca (Teresa Palmer) left home, she thought that her childhood fearswere behind her. As a young girl growing up, she was never really sure of what was real when the lights went out at night. Now, her little brother Martin (Gabriel Bateman) is experiencing the same unexplained and terrifying events that jeopardized her safety and sanity. Holding a mysterious attachment to their mother (Maria Bello), a supernatural entity has returned with a vengeance to torment the entire family.";
 
-
 const lightsoutPIC = document.getElementById("moviePic");
-  
 lightsoutPIC.innerHTML="<img src=\'lightsout.webp\' width=\'250px\' height=\'250px\'>";
-
-
 document.getElementById("movieRating").innerHTML = "My Moive Rating: 8.3/10";
+
+const moviePadding1 = document.getElementById("moiveDesc");
+moviePadding1.style.padding="15px";
+
+const movieMargin = document.getElementById("movieRating");
+
+movieMargin.style.marginTop="38px";
+
+
 
 //second horror movie container
 
@@ -333,12 +473,17 @@ const halloweenPIC = document.getElementById("moviePic2");
   
 halloweenPIC.innerHTML="<img src=\'halloween.jpg\' width=\'250px\' height=\'250px\'>";
 
-
 document.getElementById("movieRating2").innerHTML = "My Moive Rating: 7.5/10";
 
 
+const moviePadding2 = document.getElementById("moiveDesc2");
+moviePadding2.style.padding="15px";
 
 
+
+const movieMargin2 = document.getElementById("movieRating2");
+
+movieMargin2.style.marginTop="75px";
 
 //third horror movie container
 
@@ -353,11 +498,35 @@ purgePIC.innerHTML="<img src=\'purge.jpg\' width=\'250px\' height=\'250px\'>";
 document.getElementById("movieRating3").innerHTML = "My Moive Rating: 8.5/10";
 
 
+const moviePadding3 = document.getElementById("moiveDesc3");
+moviePadding3.style.padding="15px";
+
+const movieMargin3 = document.getElementById("movieRating3");
+
+movieMargin3.style.marginTop="56.5px";
+
 }
 
 
 
 function myFunny() {
+
+
+
+
+    document.getElementById("funnyMovies").innerHTML ="Funny Movies I've Watched! ";
+    
+    
+
+    const funnyMovies = document.getElementById("funnyMovies");
+    funnyMovies.style.fontSize="30px";
+    funnyMovies.style.textAlign="center";
+
+
+
+
+    document.getElementById("demobtn2").innerHTML ="X";
+  demobtn2.style.visibility = 'visible';
 
 
     //first funny movie container
@@ -370,7 +539,15 @@ const hangoverPIC = document.getElementById("moviePic4");
   
 hangoverPIC.innerHTML="<img src=\'hangover.jpg\' width=\'250px\' height=\'250px\'>";
 
-document.getElementById("movieRating4").innerHTML = "My Moive Rating: 8.3/10";
+document.getElementById("movieRating4").innerHTML = "My Moive Rating: 8.9/10";
+
+const moviePadding4 = document.getElementById("moiveDesc4");
+moviePadding4.style.padding="15px";
+
+const movieMargin4 = document.getElementById("movieRating4");
+
+movieMargin4.style.marginTop="18.5px";
+
 
 
 
@@ -378,13 +555,17 @@ document.getElementById("movieRating4").innerHTML = "My Moive Rating: 8.3/10";
 
 document.getElementById("movieTitle5").innerHTML = "Project X";
 
-document.getElementById("moiveDesc5").innerHTML = "Thomas (Thomas Mann), Costa (Oliver Cooper) and JB (Jonathan Daniel Brown) are three anonymous high-school seniors who are determined to finally make their mark. But how to make themselves unforgettable in the annals of high-school history? With an epic party, of course! The idea is innocent enough, but nothing could prepare the three friends for this shindig. As word of the soiree's awesomeness spreads, dreams are ruined, records are blemished, and legends are born.";
+document.getElementById("moiveDesc5").innerHTML = "Thomas (Thomas Mann), Costa (Oliver Cooper) and JB (Jonathan Daniel Brown) are three anonymous high-school seniors who are determined to finally make their mark. But how to make themselves unforgettable in the annals of high-school history? With an epic party, of course! The idea is innocent enough, but nothing could prepare the three friends for this shindig. As word of the soiree's awesomeness spreads, dreams are ruined, records are blemished, and legends are born.               ";
 
 const projectxPIC = document.getElementById("moviePic5");
   
 projectxPIC.innerHTML="<img src=\'projectx.jpg\' width=\'250px\' height=\'250px\'>";
 
-document.getElementById("movieRating5").innerHTML = "My Moive Rating: 8.3/10";
+document.getElementById("movieRating5").innerHTML = "My Moive Rating: 7/10";
+
+
+const moviePadding5 = document.getElementById("moiveDesc5");
+moviePadding5.style.padding="15px";
     
     //third funny movie container
 
@@ -396,14 +577,92 @@ const happygilmorePIC = document.getElementById("moviePic6");
   
 happygilmorePIC.innerHTML="<img src=\'happygilmore.jpg\' width=\'250px\' height=\'250px\'>";
 
-document.getElementById("movieRating6").innerHTML = "My Moive Rating: 8.3/10";
+document.getElementById("movieRating6").innerHTML = "My Moive Rating: 9.1/10";
+
+const moviePadding6 = document.getElementById("moiveDesc6");
+moviePadding6.style.padding="15px";
+
 
 
 }
 
 
+
+
+function myRomantic() {
+
+    document.getElementById("romanticMovies").innerHTML ="Funny Movies I've Watched! ";
+    
+    
+
+    const romanticMovies = document.getElementById("romanticMovies");
+    romanticMovies.style.fontSize="30px";
+    romanticMovies.style.textAlign="center";
+
+document.getElementById("demobtn3").innerHTML ="X";
+demobtn3.style.visibility = 'visible';
+
+
+    //first romantic movie container
+
+document.getElementById("movieTitle7").innerHTML = "Fifty Shades of Grey";
+document.getElementById("moiveDesc7").innerHTML = "Fifty Shades is a British-American film trilogy series based on the Fifty Shades trilogy by English author E. L. James. It is distributed by Universal Studios and stars Dakota Johnson and Jamie Dornan as the lead roles Anastasia Steele and Christian Grey, respectively.";
+const fiftyshadesPIC = document.getElementById("moviePic7");
+fiftyshadesPIC.innerHTML="<img src=\'fiftyshades.jpg\' width=\'250px\' height=\'250px\'>";
+document.getElementById("movieRating7").innerHTML = "My Moive Rating: 8/10";
+
+const moviePadding7 = document.getElementById("moiveDesc7");
+moviePadding7.style.padding="15px";
+
+
+const movieMargin7 = document.getElementById("movieRating7");
+
+movieMargin7.style.marginTop="74px";
+
+
+
+    //second romantic movie container
+
+document.getElementById("movieTitle8").innerHTML = "The Notebook";
+document.getElementById("moiveDesc8").innerHTML = "In 1940s South Carolina, mill worker Noah Calhoun (Ryan Gosling) and rich girl Allie (Rachel McAdams) are desperately in love. But her parents don't approve. When Noah goes off to serve in World War II, it seems to mark the end of their love affair. In the interim, Allie becomes involved with another man (James Marsden). But when Noah returns to their small town years later, on the cusp of Allie's marriage, it soon becomes clear that their romance is anything but over.";
+const notebookPIC = document.getElementById("moviePic8");
+notebookPIC.innerHTML="<img src=\'notebook.jpg\' width=\'250px\' height=\'250px\'>";
+document.getElementById("movieRating8").innerHTML = "My Moive Rating: 8.2/10";
+
+const moviePadding8 = document.getElementById("moiveDesc8");
+moviePadding8.style.padding="15px";
+
+    //third romantic movie container
+
+
+
+
+document.getElementById("movieTitle9").innerHTML = "Her";
+document.getElementById("moiveDesc9").innerHTML = "A sensitive and soulful man earns a living by writing personal letters for other people. Left heartbroken after his marriage ends, Theodore (Joaquin Phoenix) becomes fascinated with a new operating system which reportedly develops into an intuitive and unique entity in its own right. He starts the program and meets Samantha (Scarlett Johansson), whose bright voice reveals a sensitive, playful personality. Though friends initially, the relationship soon deepens into love.";
+const herPIC = document.getElementById("moviePic9");
+herPIC.innerHTML="<img src=\'her.jpg\' width=\'250px\' height=\'250px\'>";
+document.getElementById("movieRating9").innerHTML = "My Moive Rating: 8.3/10";
+
+const moviePadding9 = document.getElementById("moiveDesc9");
+moviePadding9.style.padding="15px";
+
+
+
+}
+
+
+
+
+
 //This is the onlick button of demobtn that will del the title text
 function myDel() {
+
+//horror movie title 
+
+horrorMovies.remove();
+
+
+
 
 //remove for horror movie 1
   const lightsoutPIC = document.getElementById("moviePic");
@@ -457,9 +716,15 @@ movieTitle3.remove();
 
 function myDel2(){
 
+
+
+    funnyMovies.remove();
+
+
+
 //first funny movie
-    const  hangoverPIC = document.getElementById("moviePic4");
-    hangoverPIC.remove();
+const  hangoverPIC = document.getElementById("moviePic4");
+hangoverPIC.remove();
 
 
 const moiveDesc4 = document.getElementById("moiveDesc4");
@@ -471,6 +736,93 @@ movieRating4.remove();
 
 const movieTitle4 = document.getElementById("movieTitle4");
 movieTitle4.remove();
+
+//second funny movie
+const  projectxPIC = document.getElementById("moviePic5");
+projectxPIC.remove();
+
+
+const moiveDesc5 = document.getElementById("moiveDesc5");
+moiveDesc5.remove();
+
+
+const movieRating5 = document.getElementById("movieRating5");
+movieRating5.remove();
+
+const movieTitle5 = document.getElementById("movieTitle5");
+movieTitle5.remove();
+
+//third funny movie
+const  happygilmorePIC = document.getElementById("moviePic6");
+happygilmorePIC.remove();
+
+
+const moiveDesc6 = document.getElementById("moiveDesc6");
+moiveDesc6.remove();
+
+
+const movieRating6 = document.getElementById("movieRating6");
+movieRating6.remove();
+
+const movieTitle6 = document.getElementById("movieTitle6");
+movieTitle6.remove();
+
+}
+
+function myDel3(){
+
+//first romantic movie
+const  fiftyshadesPIC = document.getElementById("moviePic7");
+fiftyshadesPIC.remove();
+
+
+const moiveDesc7 = document.getElementById("moiveDesc7");
+moiveDesc7.remove();
+
+
+const movieRating7 = document.getElementById("movieRating7");
+movieRating7.remove();
+
+const movieTitle7 = document.getElementById("movieTitle7");
+movieTitle7.remove();
+
+//second romantic movie
+const  notebookPIC = document.getElementById("moviePic8");
+notebookPIC.remove();
+
+
+const moiveDesc8 = document.getElementById("moiveDesc8");
+moiveDesc8.remove();
+
+
+const movieRating8 = document.getElementById("movieRating8");
+movieRating8.remove();
+
+const movieTitle8 = document.getElementById("movieTitle8");
+movieTitle8.remove();
+
+
+
+
+//third romantic movie
+
+const  herPIC = document.getElementById("moviePic9");
+herPIC.remove();
+
+
+const moiveDesc9 = document.getElementById("moiveDesc9");
+moiveDesc9.remove();
+
+
+const movieRating9 = document.getElementById("movieRating9");
+movieRating9.remove();
+
+const movieTitle9 = document.getElementById("movieTitle9");
+movieTitle9.remove();
+
+
+
+
 
 }
 
