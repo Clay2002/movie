@@ -16,6 +16,7 @@
 
 * {
   box-sizing: border-box;
+  background-color: rgb(235, 229, 220);
 }
 
 .Title{
@@ -23,25 +24,30 @@
     font-size: 50px;
     font-weight: bold;
     padding-bottom: 100px;
+    color: #5B1317;
+    
+  
+  
 }
+
 .left {
-  background-color: #2196F3;
+    color: #5B1317;
   float: left;
   width: 33.33%; /* The width is 20%, by default */
-  border: black solid 2px;
+
 }
 
 .main {
-  background-color: #f1f1f1;
+color: #5B1317;
   float: left;
-  border: black solid 2px;
+
   width: 33.33%; /* The width is 60%, by default */
 }
 
 .right {
-  background-color: #04AA6D;
+color: #5B1317;
   float: left;
-  border: black solid 2px;
+
   width: 33.33%; /* The width is 20%, by default */
 }
 
@@ -55,6 +61,14 @@
 .button1, .button2, .button3{
     margin: auto;
     display: flex;
+    cursor: pointer;
+    padding: 5px,10px,5px,10px;
+    border-color: #5B1317;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 17px;
+    color: #5B1317;
+  
 }
 
 
@@ -63,18 +77,60 @@
 
     visibility: hidden;
     position:absolute;
-    margin-top: 0px;
-    margin-left: 400px;
+    margin-top: 80px;
+    margin-left: -400px;
+   background-color: white;
+   cursor: pointer;
+   color: #5B1317;
+   border-color: #5B1317;
+   border-radius: 4px;
+   
+  
+  
+
+   
+}
+
+#demobtn:hover, #demobtn2:hover, #demobtn3:hover {  
+
+
+
+
+    background-color: rgb(219, 27, 27);
+    transition-timing-function: ease-in-out;
+    transition: 0.7s;
+    transform: translateY(-10%);
+    font-weight: bold;
+
+}
+
+
+
+.button1:hover, .button2:hover, .button3:hover {
+
+
+    background-color: rgb(226, 223, 223);
+   
+    transition-timing-function: ease-in;
+    transition: 0.5s;
+    transform: translateY(15%);
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: bold;
 
 
 }
+
+
+
+
 
 #movieTitle, #movieTitle2, #movieTitle3, #movieTitle4,#movieTitle5,#movieTitle6, #movieTitle7, #movieTitle8, #movieTitle9{
 
     font-size: 30px;
     font-weight: bold;
     text-align: center;
-    
+    color: #5B1317;
 }
 
 #movieRating, #movieRating2, #movieRating3, #movieRating4, #movieRating5, #movieRating6, #movieRating7, #movieRating8, #movieRating9{
@@ -87,17 +143,12 @@
 
 
 
-#demobtn, #demobtn2, #demobtn3{
-
-    margin-left: -400px;
-    margin-top: 78px;
-}
 
 #container1{
 
 float: left;
 width: 33.33%;
-border:black 3px solid ;
+
 }
 
 
@@ -106,7 +157,7 @@ border:black 3px solid ;
 
 float: left;
 width: 33.33%;
-border:black 3px solid ;
+
 
 }
 
@@ -117,7 +168,7 @@ border:black 3px solid ;
 
 float: left;
 width: 33.33%;
-border:black 3px solid ;
+
 
 }
 
@@ -125,14 +176,14 @@ border:black 3px solid ;
 
 float: left;
 width: 33.33%;
-border:black 3px solid ;
+
 
 }
 #container5{
 
 float: left;
 width: 33.33%;
-border:black 3px solid ;
+
 
 }
 
@@ -140,7 +191,7 @@ border:black 3px solid ;
 
 float: left;
 width: 33.33%;
-border:black 3px solid ;
+
 
 }
 
@@ -149,7 +200,7 @@ border:black 3px solid ;
 
 float: left;
 width: 33.33%;
-border:black 3px solid ;
+
 
 }
 
@@ -158,7 +209,7 @@ border:black 3px solid ;
 
 float: left;
 width: 33.33%;
-border:black 3px solid ;
+
 
 }
 
@@ -167,13 +218,55 @@ border:black 3px solid ;
 
 float: left;
 width: 33.33%;
-border:black 3px solid ;
 
+
+
+}
+#funnyMovies, #horrorMovies, #romanticMovies{
+    text-decoration: underline;
+    font-weight: bold;
+    color: #5B1317;
+    
 }
 
 
 
+#movieRating{
+color: rgb(2, 155, 2);
 
+}
+#movieRating2{
+color: rgb(232, 141, 43);
+
+}
+#movieRating3{
+color: rgb(2, 97, 2);
+
+}
+#movieRating4{
+color: rgb(1, 75, 1);
+
+}
+#movieRating5{
+color: rgb(255, 136, 0);
+
+}
+#movieRating6{
+color: rgb(1, 53, 1);
+
+}
+#movieRating7{
+color: green;
+
+}
+#movieRating8{
+color: rgb(1, 101, 1);
+
+}
+#movieRating9{
+color: rgb(2, 94, 2);
+
+}
 
 
 
@@ -205,8 +298,12 @@ border:black 3px solid ;
 }
 
 
-</style>
 
+
+
+
+
+</style>
 
 
 
@@ -239,13 +336,10 @@ border:black 3px solid ;
 
     <button id="demobtn" onclick="myDel()"></button>
 
+
 <div id ="horrorMovies"></div>
 
-
-
-
-
-
+</div>
 
 <div id ="container1">
 
@@ -260,6 +354,7 @@ border:black 3px solid ;
     <div id ="moiveDesc"></div>
 
     <div id ="movieRating"></div>
+  
 
 
 
@@ -275,7 +370,6 @@ border:black 3px solid ;
     <div id ="moiveDesc2"></div>
 
     <div id ="movieRating2"></div>
-
 
 
 
@@ -372,7 +466,7 @@ border:black 3px solid ;
 
 <div id ="container7">
    
-    <button id="demobtn3" onclick="myDel3()"></button>
+
 
     <div id ="movieTitle7"></div>
 
@@ -425,6 +519,15 @@ border:black 3px solid ;
 function myHorror() {
 
 
+
+
+
+
+
+    const container1 = document.getElementById("container1");
+
+   
+ 
     document.getElementById("horrorMovies").innerHTML ="Horror Movies I've Watched! ";
     
     
@@ -449,6 +552,8 @@ function myHorror() {
 document.getElementById("movieTitle").innerHTML = "Lights Out";
 
 document.getElementById("moiveDesc").innerHTML = "When Rebecca (Teresa Palmer) left home, she thought that her childhood fearswere behind her. As a young girl growing up, she was never really sure of what was real when the lights went out at night. Now, her little brother Martin (Gabriel Bateman) is experiencing the same unexplained and terrifying events that jeopardized her safety and sanity. Holding a mysterious attachment to their mother (Maria Bello), a supernatural entity has returned with a vengeance to torment the entire family.";
+
+
 
 const lightsoutPIC = document.getElementById("moviePic");
 lightsoutPIC.innerHTML="<img src=\'lightsout.webp\' width=\'250px\' height=\'250px\'>";
@@ -510,7 +615,6 @@ movieMargin3.style.marginTop="56.5px";
 
 
 function myFunny() {
-
 
 
 
@@ -591,8 +695,9 @@ moviePadding6.style.padding="15px";
 
 function myRomantic() {
 
-    document.getElementById("romanticMovies").innerHTML ="Funny Movies I've Watched! ";
-    
+
+
+    document.getElementById("romanticMovies").innerHTML ="Romantic Movies I've Watched! ";
     
 
     const romanticMovies = document.getElementById("romanticMovies");
@@ -634,9 +739,6 @@ moviePadding8.style.padding="15px";
 
     //third romantic movie container
 
-
-
-
 document.getElementById("movieTitle9").innerHTML = "Her";
 document.getElementById("moiveDesc9").innerHTML = "A sensitive and soulful man earns a living by writing personal letters for other people. Left heartbroken after his marriage ends, Theodore (Joaquin Phoenix) becomes fascinated with a new operating system which reportedly develops into an intuitive and unique entity in its own right. He starts the program and meets Samantha (Scarlett Johansson), whose bright voice reveals a sensitive, playful personality. Though friends initially, the relationship soon deepens into love.";
 const herPIC = document.getElementById("moviePic9");
@@ -661,7 +763,12 @@ function myDel() {
 
 horrorMovies.remove();
 
+demobtn.remove();
 
+container1.remove();
+container2.remove();
+container3.remove();
+    
 
 
 //remove for horror movie 1
@@ -716,9 +823,13 @@ movieTitle3.remove();
 
 function myDel2(){
 
+demobtn2.remove();
 
+funnyMovies.remove();
 
-    funnyMovies.remove();
+container4.remove();
+container5.remove();
+container6.remove();
 
 
 
@@ -770,6 +881,19 @@ movieTitle6.remove();
 }
 
 function myDel3(){
+
+
+    demobtn3.remove();
+
+    romanticMovies.remove();
+
+
+container7.remove();
+container8.remove();
+container9.remove();
+
+
+
 
 //first romantic movie
 const  fiftyshadesPIC = document.getElementById("moviePic7");
